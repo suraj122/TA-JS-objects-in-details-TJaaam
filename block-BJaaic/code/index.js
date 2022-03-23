@@ -32,7 +32,7 @@ let dogMethods = {
     this.color = color;
     return this.color;
   },
-  dogSummary: function () {
+  summary: function () {
     return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
   },
 };
@@ -52,7 +52,7 @@ let catMethods = {
     this.color = color;
     return this.color;
   },
-  catSummary: function () {
+  summary: function () {
     return `I am ${this.name} and the color of my eyes are ${this.colorOfEyes} color. I can also meow meow`;
   },
 };
@@ -61,7 +61,7 @@ Object.setPrototypeOf(catMethods, animalMethods);
 
 // Create Animal
 function createAnimal(location, numberOfLegs) {
-  let animal = Object.create(catMethods);
+  let animal = Object.create(animalMethods);
   animal.location = location;
   animal.numberOfLegs = numberOfLegs;
   return animal;
@@ -70,20 +70,18 @@ function createAnimal(location, numberOfLegs) {
 // Create Dog
 
 function createDog(location, numberOfLegs, name, color) {
-  let animal = Object.create(dogMethods);
-  animal.location = location;
-  animal.numberOfLegs = numberOfLegs;
-  animal.name = name;
-  animal.color = color;
-  return animal;
+  let dog = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(dog, dogMethods);
+  dog.name = name;
+  dog.color = color;
+  return dog;
 }
 
 // Create Cat
 
 function createCats(location, numberOfLegs, name, colorOfEyes) {
-  let cat = Object.create(catMethods);
-  cat.location = location;
-  cat.numberOfLegs = numberOfLegs;
+  let cat = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(cat, catMethods);
   cat.name = name;
   cat.colorOfEyes = colorOfEyes;
   return cat;
