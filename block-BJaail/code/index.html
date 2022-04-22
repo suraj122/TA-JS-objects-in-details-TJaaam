@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookly App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>My BookList</h1>
+    <div class="container">
+      <label>
+        Title
+        <input class="form-control" type="text" />
+      </label>
+      <label>
+        Author
+        <input class="form-control" type="text" />
+      </label>
+      <label>
+        ISBN#
+        <input class="form-control" type="text" />
+      </label>
+      <button class="form-control">Add Book</button>
+    </div>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="books"></tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
