@@ -60,6 +60,22 @@ class Book {
 }
 
 let myBooks = new BookList(document.querySelector(".books"));
-myBooks.add("The Alchemist", "Poelo Coehlo", 2333342);
-myBooks.add("Adultery", "Poelo Coehlo", 34355552);
-myBooks.add("Eleanor and Perk", "Poelo Coehlo", 35468299);
+
+let form = document.querySelector("form");
+
+const bookTitle = form.elements.title;
+const bookAuthor = form.elements.author;
+const bookUrl = form.elements.url;
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const title = bookTitle.value;
+  const author = bookAuthor.value;
+  const url = bookUrl.value;
+  myBooks.add(title, author, url);
+  bookTitle.value = "";
+  bookAuthor.value = "";
+  bookUrl.value = "";
+}
+
+form.addEventListener("submit", handleSubmit);
