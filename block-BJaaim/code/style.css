@@ -16,8 +16,6 @@ h1 {
 .container {
   max-width: 576px;
   margin: 0 auto;
-  border: 1px solid;
-  padding: 32px;
 }
 .form-control {
   display: block;
@@ -40,16 +38,38 @@ li:last-child {
 li p {
   margin: 0 24px;
 }
+.single-ques {
+  border: 1px solid;
+  padding: 32px;
+}
 .options {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .options label {
-  width: 50%;
+  width: 100%;
   display: block;
   margin-top: 16px;
 }
 .options span {
   margin-left: 12px;
+}
+.btn {
+  margin-top: 12px;
+  background-color:#705737;
+  border: 0;
+  outline: 0;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: wheat;
+  cursor: pointer;
+}
+.show {
+  display: none;
 }
